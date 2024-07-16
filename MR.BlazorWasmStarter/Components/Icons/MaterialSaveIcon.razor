@@ -1,7 +1,6 @@
 ﻿@using MR.BlazorWasmStarter.Enums
-<svg xmlns="http://www.w3.org/2000/svg" role="button" @onclick="@(()=>OnClick.InvokeAsync())"
-
-class="@CssClass" style="@AdditionalCss" width=@GetWidth() height="@GetHeight()" viewBox="0 0 24 24"><path fill="@ColourCode" d="M15 9H5V5h10m-3 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3m5-16H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7z" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" role="button" @onclick="@(() => OnClick.InvokeAsync())"
+     class="@CssClass" style="@AdditionalCss" width=@GetWidth() height="@GetHeight()" viewBox="0 0 24 24"><path fill="@ColourCode" d="M15 9H5V5h10m-3 14a3 3 0 0 1-3-3a3 3 0 0 1 3-3a3 3 0 0 1 3 3a3 3 0 0 1-3 3m5-16H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7z" /></svg>
 
 
 @code
@@ -20,7 +19,8 @@ class="@CssClass" style="@AdditionalCss" width=@GetWidth() height="@GetHeight()"
 
     [Parameter] public string CssClass { get; set; } = string.Empty;
 
-    [Parameter] public string AdditionalCss { get; set; } = string.Empty;
+    [Parameter] public string AdditionalCss {get; set; } = string.Empty;
+
     [Parameter] public EventCallback OnClick { get; set; }
 
     private string GetWidth() => $"{Width}{GetCssUnitType()}";

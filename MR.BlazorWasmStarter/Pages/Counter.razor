@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@using MR.BlazorWasmStarter.Components
+@using MR.BlazorWasmStarter.Components.Icons
 
 <PageTitle>Counter</PageTitle>
 
@@ -11,8 +13,12 @@
 @code {
     private int currentCount = 0;
 
+    // [currentCount,setCurrentCount] = useState()
+
     private void IncrementCount()
     {
         currentCount++;
+
+        // setCurrentCount(currentCount + 1);
     }
 }

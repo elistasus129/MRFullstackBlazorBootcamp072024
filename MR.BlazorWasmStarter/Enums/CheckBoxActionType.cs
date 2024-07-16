@@ -1,4 +1,6 @@
-﻿namespace MR.BlazorWasmStarter.Enums
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MR.BlazorWasmStarter.Enums
 {
     public enum CheckBoxActionType
     {
