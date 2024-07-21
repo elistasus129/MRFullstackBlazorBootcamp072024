@@ -1,4 +1,5 @@
 ﻿namespace MR.BlazorGiftSuggestionApp.Enums;
+
 public enum RelationshipType
 {
     Friend = 1, // Arkadas
