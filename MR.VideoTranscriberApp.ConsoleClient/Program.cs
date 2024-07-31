@@ -1,4 +1,4 @@
-﻿using OpenAI.ObjectModels.RequestModels;
+using OpenAI.ObjectModels.RequestModels;
 using OpenAI.ObjectModels;
 using System;
 using System.Resources;
@@ -6,7 +6,7 @@ using Xabe.FFmpeg;
 using OpenAI.Managers;
 using OpenAI;
 
-var videoFilePath = "D:\\egivideo\\Sam-Bankman-Fried.mp4";
+var videoFilePath = "C:\\Users\\alper\\Desktop\\Sam-Bankman-Fried.mp4";
 
 // Get audio file path
 // "C:\\Users\\alper\\Desktop\\Sam-Bankman-Fried.mp3";
@@ -29,7 +29,7 @@ const string fileName = "Sam-Bankman-Fried.mp3";
 
 var sampleFile = await File.ReadAllBytesAsync(audioFilePath);
 
-var apiKey = File.ReadAllText("D:\\egivideo\\OpenAIApiKey.txt");
+var apiKey = File.ReadAllText("C:\\Users\\alper\\Desktop\\OpenAIApiKey.txt");
 
 var openAiService = new OpenAIService(new OpenAiOptions()
 {
@@ -49,7 +49,7 @@ var transcription = audioResult.Text;
 
 Console.WriteLine(transcription);
 
-await File.WriteAllTextAsync("D:\\egivideo\\WhisperResponse.srt", transcription, cts.Token);
+await File.WriteAllTextAsync("C:\\Users\\alper\\Desktop\\WhisperResponse.srt", transcription, cts.Token);
 
 var language = "Turkish";
 
@@ -68,5 +68,5 @@ if (completionResult.Successful)
 
     Console.WriteLine(turkishTranscription);
 
-    await File.WriteAllTextAsync("D:\\egivideo\\WhisperResponse.tr-TR.srt", turkishTranscription, cts.Token);
+    await File.WriteAllTextAsync("C:\\Users\\alper\\Desktop\\WhisperResponse.tr-TR.srt", turkishTranscription, cts.Token);
 }
